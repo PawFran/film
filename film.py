@@ -14,8 +14,8 @@ class Film:
         s += ", polish_title: " + self.polish_title
         s += ", year: " + str(self.year)
         s += ", link: " + self.link
-        s += ", country: " + self.country
-        s += ", genre: " + self.genre
+        s += ", country: " + str(self.country)
+        s += ", genre: " + str(self.genre)
 
         return s
 
