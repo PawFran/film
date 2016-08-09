@@ -2,7 +2,7 @@ import re
 
 # to do: check automatically if nr of lines is equal to number of movies to be seen
 
-name = 'F:\dokumenty\dont_wanna_see.htm'
+name = 'F:\dokumenty\wanna_see.htm'
 handle = open(name)
 txt = handle.read()
 
@@ -17,7 +17,6 @@ for element in lst:
         films.append(element)
 
 print 'length of the films list:', len(films), '\n'
-
 
 for element in films[1 : 10]:
     print element
