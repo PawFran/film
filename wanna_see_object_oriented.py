@@ -1,5 +1,14 @@
 from film import *
 import re
+import sqlite3
+
+conn = sqlite3.connect('films.sqlite')
+conn.text_factory = str
+cur = conn.cursor()
+
+cur.execute('''DROP TABLE IF EXISTS Films''')
+cur.execute('''CREATE TABLE Films (title TEXT, polish_title TEXT, year INTEGER, link TEXT, country TEXT, genre TEXT)''')
+
 
 name = 'F:\dokumenty\wanna_see.htm'
 handle = open(name)
@@ -81,4 +90,10 @@ for element in films_str:
 
     films.append(film)
 
-print films[0]
+# put data in database
+for film in films:
+    cur.execute('''INSERT INTO Films (title, polish_title, year, link, country, genre) VALUES (?, ?, ?, ?, ?, ?)''', (film.title, film.polish_title, film.year, film.link, str(film.country), str(film.genre)) )
+
+conn.commit()
+
+cur.close()
