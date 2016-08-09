@@ -1,5 +1,3 @@
-import re
-
 class Film:
     def __init__(self, title = "", polish_title = "", year = 0, link = "", country = "", genre = ""):
         self.polish_title = polish_title
