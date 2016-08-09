@@ -2,19 +2,13 @@ import re
 
 # to do: check automatically if nr of lines is equal to number of movies to be seen
 
-name = 'F:\dokumenty\wanna_see.htm'
+name = 'F:\dokumenty\dont_wanna_see.htm'
 handle = open(name)
 txt = handle.read()
 
 lst = txt.split("td sorttable_customkey=")
 
 print 'length of the initial list:', len(lst), '(there are 2450 movies on the list)'
-
-# element = lst[1]
-# print element
-#
-# for i in range(2, 10):
-#     print lst[i]
 
 films = list()
 
@@ -23,9 +17,6 @@ for element in lst:
         films.append(element)
 
 print 'length of the films list:', len(films), '\n'
-
-# for i in range(0, 10):
-#     print films[i]
 
 
 for element in films[1 : 10]:
