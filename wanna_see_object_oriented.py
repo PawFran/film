@@ -62,7 +62,7 @@ for element in films_str:
     if title:
         title_str = title.group()
         if title_str.find('kraj') != -1:
-            title_str =  polish_title_str[1 : len(polish_title_str) - 1]
+            title_str =  polish_title_str[ : len(polish_title_str)]
         else:
             title_str =  title_str[4 : len(title_str) - 4]
 
