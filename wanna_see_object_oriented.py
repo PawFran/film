@@ -2,7 +2,8 @@ from film import *
 import re
 import sqlite3
 
-conn = sqlite3.connect('films.sqlite')
+# conn = sqlite3.connect('films.sqlite')
+conn = sqlite3.connect('F:/dokumenty/filmweb analysis/wanna_see.sqlite')
 conn.text_factory = str
 cur = conn.cursor()
 
